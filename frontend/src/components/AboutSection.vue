@@ -68,8 +68,8 @@ const info = [
   { key: 'ROLE',     val: 'Full-Stack Dev',    color: 'var(--green)' },
   { key: 'LOCATION', val: 'Manila, PH 🇵🇭' },
   { key: 'STATUS',   val: '✅ Open to work',   color: 'var(--green)' },
-  { key: 'SCHOOL',   val: 'RTU / Asia Pacific College' },
-  { key: 'JOINED',   val: '2020' },
+  { key: 'SCHOOL',   val: 'Asia Pacific College' },
+  { key: 'JOINED',   val: '2026' },
   { key: 'GUILD',    val: 'Open Source PH' },
 ]
 
