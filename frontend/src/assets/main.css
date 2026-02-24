@@ -1,0 +1,255 @@
+/* =============================================
+   GROWTOPIA PIXEL THEME — FULL GLOBAL STYLES
+   ============================================= */
+
+:root {
+  /* Core palette */
+  --green:        #4ade80;
+  --green-mid:    #22c55e;
+  --green-dark:   #16a34a;
+  --green-deep:   #14532d;
+  --blue:         #38bdf8;
+  --blue-dark:    #0369a1;
+  --yellow:       #fbbf24;
+  --orange:       #fb923c;
+  --red:          #f87171;
+  --purple:       #a78bfa;
+
+  /* Backgrounds */
+  --bg:           #070c14;
+  --bg2:          #0b1120;
+  --bg3:          #0f1929;
+  --panel:        #131e2e;
+  --panel2:       #172436;
+  --panel3:       #1c2d42;
+
+  /* Borders */
+  --border:       #1e3553;
+  --border2:      #274566;
+
+  /* Text */
+  --text:         #e2f0ff;
+  --text2:        #8faec8;
+  --text3:        #5a7a99;
+
+  /* Fonts */
+  --font-pixel:   'Press Start 2P', monospace;
+  --font-mono:    'VT323', monospace;
+  --font-body:    'Outfit', sans-serif;
+}
+
+/* ---- RESET ---- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Pixel grid background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(74,222,128,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74,222,128,.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* CRT scanline overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,.05) 3px,
+    rgba(0,0,0,.05) 4px
+  );
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* ---- SCROLLBAR ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--green-dark); }
+::-webkit-scrollbar-thumb:hover { background: var(--green); }
+
+/* ---- LAYOUT ---- */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 96px 0;
+}
+
+/* ---- SECTION TITLE ---- */
+.section-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(10px, 1.8vw, 14px);
+  color: var(--green);
+  text-shadow: 0 0 24px rgba(74,222,128,.5);
+  margin-bottom: 56px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  letter-spacing: 2px;
+}
+.section-title::before {
+  content: '▶';
+  color: var(--yellow);
+  animation: blink 1.2s step-end infinite;
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green-dark), transparent);
+}
+
+/* ---- PIXEL BOX ---- */
+.pbox {
+  background: var(--panel);
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 rgba(0,0,0,.6);
+  position: relative;
+}
+.pbox-green {
+  border-color: var(--green-dark);
+  box-shadow: 4px 4px 0 var(--green-deep), 0 0 24px rgba(74,222,128,.08);
+}
+.pbox-blue {
+  border-color: var(--blue-dark);
+  box-shadow: 4px 4px 0 #0c4a6e, 0 0 24px rgba(56,189,248,.08);
+}
+
+/* ---- PIXEL BUTTON ---- */
+.pbtn {
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 12px 22px;
+  background: var(--green-dark);
+  color: #fff;
+  border: 2px solid var(--green);
+  box-shadow: 4px 4px 0 var(--green-deep);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform .1s, box-shadow .1s, background .1s;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.pbtn:hover {
+  background: var(--green);
+  color: #000;
+  transform: translate(-2px,-2px);
+  box-shadow: 6px 6px 0 var(--green-deep);
+}
+.pbtn:active {
+  transform: translate(2px,2px);
+  box-shadow: 2px 2px 0 var(--green-deep);
+}
+.pbtn-blue {
+  background: #1e40af;
+  border-color: var(--blue);
+  box-shadow: 4px 4px 0 #1e3a8a;
+}
+.pbtn-blue:hover {
+  background: var(--blue);
+  color: #000;
+  box-shadow: 6px 6px 0 #1e3a8a;
+}
+.pbtn-sm { font-size: 7px; padding: 8px 14px; }
+.pbtn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ---- PIXEL INPUT ---- */
+.pinput {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  background: var(--bg2);
+  border: 2px solid var(--border);
+  color: var(--text);
+  padding: 10px 14px;
+  width: 100%;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,.5);
+}
+.pinput:focus {
+  border-color: var(--green);
+  box-shadow: inset 2px 2px 0 rgba(0,0,0,.5), 0 0 12px rgba(74,222,128,.2);
+}
+.pinput::placeholder { color: var(--text3); }
+
+/* ---- BADGE / TAG ---- */
+.pbadge {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  padding: 3px 7px;
+  border: 2px solid currentColor;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+.ptag {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  padding: 4px 8px;
+  background: rgba(74,222,128,.08);
+  border: 1px solid var(--green-dark);
+  color: var(--green);
+  display: inline-block;
+  margin: 3px 2px;
+}
+
+/* ---- ANIMATIONS ---- */
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50%     { transform: translateY(-12px); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes glitch {
+  0%,90%,100% { transform: translate(0); filter: none; }
+  92% { transform: translate(-3px,0); filter: hue-rotate(90deg); }
+  94% { transform: translate(3px,0); filter: hue-rotate(-90deg); }
+  96% { transform: translate(0); }
+}
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 0 8px rgba(74,222,128,.3); }
+  50%     { box-shadow: 0 0 24px rgba(74,222,128,.7); }
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+  .container { padding: 0 16px; }
+  .section-title { font-size: 10px; }
+}
