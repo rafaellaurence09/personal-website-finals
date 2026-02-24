@@ -19,7 +19,7 @@
         </p>
         <div class="footer-links">
           <a href="https://github.com"        target="_blank" class="fl">🐙 GITHUB</a>
-          <a href="mailto:you@example.com"                    class="fl">📧 EMAIL</a>
+          <a href="remartinez@student.apc.edu.ph"                    class="fl">📧 EMAIL</a>
           <a href="https://linkedin.com"       target="_blank" class="fl">💼 LINKEDIN</a>
         </div>
       </div>

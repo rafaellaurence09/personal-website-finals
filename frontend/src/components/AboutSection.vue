@@ -64,11 +64,11 @@
 
 <script setup>
 const info = [
-  { key: 'NAME',     val: 'Juan Dela Cruz' },
+  { key: 'NAME',     val: 'Rafael Laurence E. Martinez' },
   { key: 'ROLE',     val: 'Full-Stack Dev',    color: 'var(--green)' },
   { key: 'LOCATION', val: 'Manila, PH 🇵🇭' },
   { key: 'STATUS',   val: '✅ Open to work',   color: 'var(--green)' },
-  { key: 'SCHOOL',   val: 'PLM / Mapúa / PUP' },
+  { key: 'SCHOOL',   val: 'RTU / Asia Pacific College' },
   { key: 'JOINED',   val: '2020' },
   { key: 'GUILD',    val: 'Open Source PH' },
 ]

@@ -70,8 +70,8 @@
           </p>
 
           <h1 class="hero-name">
-            <span class="name-main">JUAN DELA</span>
-            <span class="name-accent">CRUZ</span>
+            <span class="name-main">Rafael Laurence E.</span>
+            <span class="name-accent">Martinez</span>
           </h1>
 
           <div class="hero-role">
